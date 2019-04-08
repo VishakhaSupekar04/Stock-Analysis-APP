@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Midterm.Charts"
+             Title="Chart" 
+             Icon="chart.png"
+             Appearing="Handle_Appearing">
+    <ContentPage.Content >
+        <StackLayout VerticalOptions="StartAndExpand" 
+                     HorizontalOptions="Center"
+                     Padding="0,60,5,5"
+                     x:Name="ChartListView"
+                     >
+            <Label Text="Welcome to stock chart analysis"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="10"/>
+            
+            <Label Text="Last 30 days"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="CenterAndExpand"
+                   />
+  
+            <charts:ChartView x:Name="Chart1" 
+                              Chart="{Binding Chart}"
+                              BackgroundColor="Black" 
+                              HeightRequest="250"
+                              WidthRequest="400"/>
+            
+          <Label Text="Last 100 days"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="CenterAndExpand"/>
+            
+            <charts:ChartView x:Name="Chart2" 
+                              Chart="{Binding Chart}"
+                              BackgroundColor="Black" 
+                              HeightRequest="250"
+                              WidthRequest="400"
+                              />
+            
+             <!--<Button Text="Click here to load chart" Clicked="GetChart" 
+                     VerticalOptions="End" 
+                     FontAttributes="Bold"
+                     FontSize="Medium"
+                     />-->
+             
+        </StackLayout>
+      </ContentPage.Content>
+</ContentPage>

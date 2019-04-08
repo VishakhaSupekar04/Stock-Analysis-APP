@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Midterm" 
+             x:Class="Midterm.MainPage"
+             HeightRequest="100"
+             >
+     
+    <local:Stock>
+        </local:Stock>
+    <local:Charts>
+        </local:Charts>
+    
+</TabbedPage>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Midterm.Stock"
+             Title="Stocks" 
+             Icon="assessment.png"
+             >
+        
+        <StackLayout Padding="4,35,4,4"> 
+                   
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                
+                <Entry      x:Name="stockName"
+                            Grid.Column="0" Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            Margin="10"
+                            Placeholder="Enter Stock name"
+                            />
+                <Button
+                            x:Name="GetStockInfo"
+                            Grid.Column="3" Grid.Row="0"
+                            Image="search.png"
+                            Text="Search"
+                            
+                            FontAttributes="Bold"
+                            Clicked="Handle_GetStockInfo"
+                            />
+                        <Label
+                            Grid.Row="1" Grid.Column="0"
+                            Text="Highest price: " TextColor="Green"
+                            
+                            FontAttributes="Bold" 
+                            />
+                        <Label
+                            x:Name="Highest"
+                            Grid.Row="1" Grid.Column="1"
+                            TextColor="Green" 
+                            FontAttributes="Bold" />
+               
+                        <Label
+                            Grid.Row="1" Grid.Column="2"
+                            TextColor="Red" Text=" Lowest price: "
+                            
+                            FontAttributes="Bold"/>
+                    
+                        <Label
+                            x:Name="Lowest"
+                            Grid.Row="1" Grid.Column="3"
+                            TextColor="Red" 
+                            FontAttributes="Bold" />
+                    
+        <ListView Grid.Row="2" 
+                  Grid.Column="0"  
+                  Grid.ColumnSpan="4"
+                  x:Name="StockListView" 
+                  HasUnevenRows="true"
+                  BackgroundColor="Transparent"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                    <ViewCell.View>
+            <Grid BackgroundColor="Transparent"
+                  Margin="5">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>                        
+                    </Grid.RowDefinitions>
+             
+                                      
+            <Label Text="{Binding Date}" TextColor="Black" 
+                   MinimumHeightRequest="50"
+                   Grid.Row="0" Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   FontFamily="Courier"/>
+                                        
+            <Label Text="Open" TextColor="Black"
+                   Grid.Row="1" Grid.Column="0"
+                   FontAttributes="Bold"/>  
+                                        
+            <Label Text="{Binding Open}" TextColor="Blue" 
+                   MinimumHeightRequest="50"
+                   Grid.Row="1" Grid.Column="1"/>  
+                                        
+            <Label Text="Close" TextColor="Black"
+                   Grid.Row="1" Grid.Column="2"
+                   FontAttributes="Bold" />  
+                                        
+            <Label Text="{Binding Close}" TextColor="Gray" 
+                   MinimumHeightRequest="50"
+                   Grid.Row="1" Grid.Column="3"/>
+                                        
+            <Label Text="DayHigh" TextColor="Black"
+                   Grid.Row="2" Grid.Column="0"
+                   FontAttributes="Bold" /> 
+                                        
+            <Label Text="{Binding High}" TextColor="Red" 
+                   MinimumHeightRequest="50"
+                   Grid.Row="2" Grid.Column="1"/>
+                                        
+            <Label Text="DayLow" TextColor="Black"
+                   Grid.Row="2" Grid.Column="2"
+                   FontAttributes="Bold"/>
+                                        
+            <Label Text="{Binding Low}" TextColor="Green" 
+                   MinimumHeightRequest="50"
+                   Grid.Row="2" Grid.Column="3"/>
+                 
+               </Grid>
+                    </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+           </ListView> 
+                </Grid>
+        </StackLayout>
+        </ContentPage>
+
+       
